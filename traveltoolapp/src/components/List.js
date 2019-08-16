@@ -25,6 +25,7 @@ function List() {
         // Cards created using bootstrap https://getbootstrap.com/docs/4.0/components/card/
         <React.Fragment>
             <div className="container">
+                <h3 className="text-center">Travel Tool</h3>
             {flags ? flags.map(flag => (
             <div>
                 <div className = "row d-flex justify-content-center">

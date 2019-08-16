@@ -97,7 +97,8 @@ function CountryPage(props) {
     // Centers the flag
     const countryimage = {
         maxWidth: "25vw",
-        textAlign: "center"
+        textAlign: "center",
+        margin: "25px 0"
     }
 
     // All design created using Bootstrap
@@ -106,18 +107,17 @@ function CountryPage(props) {
             {country ? 
             <div>
                 <div className="container">
-                    <div class="d-flex justify-content-center">
-                        <img src={country.flag} alt={country.name} className="img-fluid img-thumbnail" style={countryimage}></img>
-                    </div>
                     <h1 className="text-center">{country.name}</h1>
                     <p className="text-center">{country.altSpellings[country.altSpellings.length - 1]}</p>
-                    <h2 className="text-center">{time}</h2>
+                    <h2 className="text-center">Current time: {time}</h2>
+                    <div class="d-flex justify-content-center">
+                        <img src={country.flag} alt={country.name} className="img-fluid img-thumbnail" style={countryimage}></img>
+                    </div>                    
                     <h3 className="text-center">$1 (USD) = {currency} ({country.currencies[0].code})</h3>
                     <h2 className="text-center">Currency conversion</h2>
                     <p className="text-center">{convert}</p>
                     <form><input type="text" onChange={handleChange} className="form-control form-control-sm" placeholder="$$"/></form>
-                    
-                    <h2 className="text-center">Discussion</h2>
+                    <h2 className="text-center" style={{margin: '25px 0'}}>Discussion</h2>
                     <form onSubmit={handleSubmit}>
                         <input className="form-control form-control-sm" placeholder="Name" type="text" 
                         value={formData.name} onChange={(e) => setFormData({...formData, name:e.target.value })}/>
